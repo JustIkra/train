@@ -1,0 +1,6 @@
+train: sorted\train
+val: sorted\val
+test: sorted\test
+
+nc: 1
+names: ['face']
