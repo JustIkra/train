@@ -1,6 +1,6 @@
-train: sorted\train
-val: sorted\val
-test: sorted\test
+train: C:\Users\senpa\OneDrive\Изображения\try_1\sorted\train
+val: C:\Users\senpa\OneDrive\Изображения\try_1\sorted\val
+test: C:\Users\senpa\OneDrive\Изображения\try_1\sorted\test
 
 nc: 1
 names: ['face']
