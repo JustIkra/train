@@ -21,7 +21,7 @@ def process_image(image:np.ndarray) -> np.ndarray:
     image_with_boxes = image
 
     for result in results:
-        for box in result.box:
+        for box in result.boxes:
             x1,y1,x2,y2 = map(int, box.xyxy[0])
             cv2.rectangle(image_with_boxes, (x1, y1), (x2, y2), (0, 255 , 0) ,2)
 
@@ -39,7 +39,7 @@ async def detect_face(file: UploadFile = File(...)):
 
     processed_image = process_image(image)
 
-    _, encoded_image = cv2.imencode("jpg", cv2.cvtColor(processed_image, cv2.COLOR_RGB2BGR))
+    _, encoded_image = cv2.imencode(".jpg", cv2.cvtColor(processed_image, cv2.COLOR_RGB2BGR))
     return Response(content=encoded_image.tobytes(), media_type="image/jpeg")
 
 if __name__ == "__main__":
